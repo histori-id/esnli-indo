@@ -4,3 +4,6 @@ accelerate
 scikit-learn
 pandas
 torch
+peft
+sacrebleu
+rouge_score
