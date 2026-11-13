@@ -1,0 +1,6 @@
+outputs/
+checkpoint-*/
+*.pt
+*.safetensors
+out*.txt
+.env
