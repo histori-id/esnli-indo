@@ -13,8 +13,6 @@ BLEU Score: 34.88 — Reflects the lexical overlap and structural retention betw
 
 BERTScore (F1): 89.42 — Measures token-level contextual embedding similarity, demonstrating that the translated rationales successfully preserve critical semantic nuances.
 
-BERT Cosine Similarity: [...]  — Confirms high vector alignment in the shared embedding space, ensuring that no significant logical or conceptual drift occurred during the forward and backward translation processes.
-
 ## Methodology & Extension Process
 Base Dataset: We utilized the existing translated version of the Indonesian SNLI dataset, which comprises premises, hypotheses, and golden labels.
 
@@ -34,7 +32,7 @@ Alignment & Curation: The translated explanations were systematically paired and
 > ⚠️ **Note on Train Dataset Split:** Please note that due to storage and hosting constraints on this platform, the training subset provided directly within this repository **does not contain the full training dataset**. 
 > 
 > To download the **complete and uncompressed dataset** (including the full training, validation, and test splits), please access our Google Drive repository here:  
-> 🔗 **[Access Full Dataset via Google Drive](https://drive.google.com/drive/folders/1y6th36VS25f2RYpkQFhww6lA18mgzBKq?usp=sharing)**
+> 🔗 **[Access Full Dataset via Google Drive](https://drive.google.com/drive/folders/1Zeg6E-T_nLx9d96HotH2yBOyhSDRlUpz?usp=sharing)**
 
 ## Data Format and Structure
 The dataset is formatted in JSON Lines (.jsonl), combining the preexisting Indonesian SNLI features with our newly added penjelasan key.
