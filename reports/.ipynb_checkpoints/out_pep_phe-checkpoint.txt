@@ -1,0 +1,62 @@
+Device: cuda | input tahap 3: phe (outputs/phe_to_label_xlmr)
+[test] 0 baris dibuang (label '-' atau teks kosong), sisa 1965
+[transformers] [1mXLMRobertaModel LOAD REPORT[0m from: xlm-roberta-base
+Key                       | Status     |  | 
+--------------------------+------------+--+-
+lm_head.layer_norm.bias   | UNEXPECTED |  | 
+lm_head.dense.bias        | UNEXPECTED |  | 
+lm_head.layer_norm.weight | UNEXPECTED |  | 
+lm_head.dense.weight      | UNEXPECTED |  | 
+lm_head.bias              | UNEXPECTED |  | 
+
+Notes:
+- UNEXPECTED:	can be ignored when loading from different task/architecture; not ok if you expect identical arch.
+✅ Classifier dimuat dari outputs/ph_to_label_xlmr (base: xlm-roberta-base, max_length: 128)
+
+============================================================
+   TAHAP 1 — Label awal (P+H) vs label emas
+============================================================
+Akurasi         : 0.3430
+F1-Score (Macro): 0.1703
+              precision    recall  f1-score   support
+
+keterlibatan     0.3430    1.0000    0.5108       674
+      netral     0.0000    0.0000    0.0000       644
+ kontradiksi     0.0000    0.0000    0.0000       647
+
+    accuracy                         0.3430      1965
+   macro avg     0.1143    0.3333    0.1703      1965
+weighted avg     0.1177    0.3430    0.1752      1965
+
+Confusion matrix (baris=acuan, kolom=prediksi): ['keterlibatan', 'netral', 'kontradiksi']
+[[674   0   0]
+ [644   0   0]
+ [647   0   0]]
+/usr/local/lib/python3.12/site-packages/transformers/modeling_utils.py:3303: FutureWarning: `is_gradient_checkpointing` is deprecated and will be removed in v6. Use `is_activation_checkpointing` instead.
+  warnings.warn(
+✅ Generator dimuat: base google/gemma-3-270m + adapter LoRA outputs/phl_to_expl_gemma/best_model
+
+Generasi penjelasan dengan label awal (1965 contoh)...
+  generasi 32/1965
+  generasi 64/1965
+  generasi 96/1965
+  generasi 128/1965
+  generasi 160/1965
+  generasi 192/1965
+  generasi 224/1965
+  generasi 256/1965
+  generasi 288/1965
+  generasi 320/1965
+  generasi 352/1965
+  generasi 384/1965
+  generasi 416/1965
+  generasi 448/1965
+  generasi 480/1965
+  generasi 512/1965
+  generasi 544/1965
+  generasi 576/1965
+  generasi 608/1965
+  generasi 640/1965
+  generasi 672/1965
+  generasi 704/1965
+  generasi 736/1965
