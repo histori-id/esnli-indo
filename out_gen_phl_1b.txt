@@ -1,0 +1,36 @@
+✅ dataset/train_data.jsonl: 5893 baris, kolom = ['annotator_labels', 'label emas', 'kalimat1', 'kalimat2', 'penjelasan']
+✅ dataset/validation_data.jsonl: 1965 baris, kolom = ['annotator_labels', 'label emas', 'kalimat1', 'kalimat2', 'penjelasan']
+✅ dataset/test_data.jsonl: 1965 baris, kolom = ['annotator_labels', 'label emas', 'kalimat1', 'kalimat2', 'penjelasan']
+[train] 0 baris dibuang (label '-' atau teks kosong), sisa 5893
+[validation] 0 baris dibuang (label '-' atau teks kosong), sisa 1965
+`torch_dtype` is deprecated! Use `dtype` instead!
+trainable params: 13,045,760 || all params: 1,012,931,712 || trainable%: 1.2879
+Contoh input : <bos>Premis: Sekelompok orang di gang melihat ke kamera.
+Hipotesis: Orang-orang ada di komputer mereka
+Label: kontradiksi
+Penjelasan: Orang-orang melihat kamera atau komputer mereka, yang merupakan barang yang berbeda.<eos>
+Contoh target:  Orang-orang melihat kamera atau komputer mereka, yang merupakan barang yang berbeda.<eos>
+Memulai pelatihan di device: cuda:0 | LoRA | lr=0.0002
+Traceback (most recent call last):
+  File "/home/iisafriyanti/RISET/esnli-indo/experiments/train_phl_to_expl_gemma.py", line 387, in <module>
+    main()
+  File "/home/iisafriyanti/RISET/esnli-indo/experiments/train_phl_to_expl_gemma.py", line 335, in main
+    trainer.train()
+  File "/home/iisafriyanti/RISET/env/lib/python3.12/site-packages/transformers/trainer.py", line 2325, in train
+    return inner_training_loop(
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/home/iisafriyanti/RISET/env/lib/python3.12/site-packages/transformers/trainer.py", line 2674, in _inner_training_loop
+    tr_loss_step = self.training_step(model, inputs, num_items_in_batch)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/iisafriyanti/RISET/env/lib/python3.12/site-packages/transformers/trainer.py", line 4071, in training_step
+    self.accelerator.backward(loss, **kwargs)
+  File "/home/iisafriyanti/RISET/env/lib/python3.12/site-packages/accelerate/accelerator.py", line 2740, in backward
+    loss.backward(**kwargs)
+  File "/home/iisafriyanti/RISET/env/lib/python3.12/site-packages/torch/_tensor.py", line 625, in backward
+    torch.autograd.backward(
+  File "/home/iisafriyanti/RISET/env/lib/python3.12/site-packages/torch/autograd/__init__.py", line 354, in backward
+    _engine_run_backward(
+  File "/home/iisafriyanti/RISET/env/lib/python3.12/site-packages/torch/autograd/graph.py", line 841, in _engine_run_backward
+    return Variable._execution_engine.run_backward(  # Calls into the C++ engine to run the backward pass
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+torch.OutOfMemoryError: CUDA out of memory. Tried to allocate 1.75 GiB. GPU 0 has a total capacity of 15.47 GiB of which 1.29 GiB is free. Including non-PyTorch memory, this process has 13.78 GiB memory in use. Of the allocated memory 11.88 GiB is allocated by PyTorch, and 1.63 GiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)
