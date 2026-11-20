@@ -1,0 +1,151 @@
+{
+  "config": {
+    "test_file": "dataset/nllb/test_data.jsonl",
+    "premise_col": "kalimat1",
+    "hypothesis_col": "kalimat2",
+    "label_col": "label emas",
+    "explanation_cols": [
+      "penjelasan"
+    ],
+    "clf_dir": "outputs/ph_to_label_xlmr",
+    "clf_ckpt": "best_ph_to_label_xlmr_model.pt",
+    "gen_dir": "outputs/phl_to_expl_gemma/best_model",
+    "final_input": "phe",
+    "final_clf_dir": "outputs/phe_to_label_xlmr",
+    "final_clf_ckpt": null,
+    "base_model": null,
+    "output_dir": "outputs/predict_explain_predict_phe",
+    "max_samples": null,
+    "clf_batch_size": 64,
+    "gen_batch_size": 32,
+    "max_new_tokens": 80,
+    "num_beams": 4
+  },
+  "n": 1965,
+  "stage1": {
+    "accuracy": 0.7689567430025446,
+    "macro_f1": 0.7677344223487932,
+    "confusion_matrix": [
+      [
+        558,
+        67,
+        49
+      ],
+      [
+        79,
+        456,
+        109
+      ],
+      [
+        51,
+        99,
+        497
+      ]
+    ],
+    "per_class": {
+      "keterlibatan": {
+        "precision": 0.811046511627907,
+        "recall": 0.827893175074184,
+        "f1-score": 0.8193832599118943,
+        "support": 674.0
+      },
+      "netral": {
+        "precision": 0.7331189710610932,
+        "recall": 0.7080745341614907,
+        "f1-score": 0.7203791469194313,
+        "support": 644.0
+      },
+      "kontradiksi": {
+        "precision": 0.7587786259541984,
+        "recall": 0.768160741885626,
+        "f1-score": 0.7634408602150538,
+        "support": 647.0
+      },
+      "accuracy": 0.7689567430025446,
+      "macro avg": {
+        "precision": 0.7676480362143995,
+        "recall": 0.7680428170404335,
+        "f1-score": 0.7677344223487932,
+        "support": 1965.0
+      },
+      "weighted avg": {
+        "precision": 0.7682970672737506,
+        "recall": 0.7689567430025446,
+        "f1-score": 0.7685163991632927,
+        "support": 1965.0
+      }
+    }
+  },
+  "explanation": {
+    "bleu": 14.142270323086427,
+    "rougeL_f1": 36.21469818115908,
+    "num_references": 1,
+    "n": 1965
+  },
+  "stage3_final": {
+    "accuracy": 0.7689567430025446,
+    "macro_f1": 0.7677569028590545,
+    "confusion_matrix": [
+      [
+        557,
+        68,
+        49
+      ],
+      [
+        79,
+        455,
+        110
+      ],
+      [
+        49,
+        99,
+        499
+      ]
+    ],
+    "per_class": {
+      "keterlibatan": {
+        "precision": 0.8131386861313868,
+        "recall": 0.8264094955489614,
+        "f1-score": 0.8197203826342899,
+        "support": 674.0
+      },
+      "netral": {
+        "precision": 0.7315112540192926,
+        "recall": 0.7065217391304348,
+        "f1-score": 0.7187993680884676,
+        "support": 644.0
+      },
+      "kontradiksi": {
+        "precision": 0.7583586626139818,
+        "recall": 0.7712519319938176,
+        "f1-score": 0.7647509578544062,
+        "support": 647.0
+      },
+      "accuracy": 0.7689567430025446,
+      "macro avg": {
+        "precision": 0.7676695342548872,
+        "recall": 0.768061055557738,
+        "f1-score": 0.7677569028590545,
+        "support": 1965.0
+      },
+      "weighted avg": {
+        "precision": 0.7683495047085117,
+        "recall": 0.7689567430025446,
+        "f1-score": 0.7685456491991274,
+        "support": 1965.0
+      }
+    }
+  },
+  "label_changes": {
+    "berubah": 9,
+    "benar_ke_salah": 3,
+    "salah_ke_benar": 3,
+    "salah_ke_salah_lain": 3
+  },
+  "selective_prediction": {
+    "coverage": 0.9954198473282443,
+    "accuracy_on_agreed": 0.7709611451942741,
+    "accuracy_on_disagreed_stage1": 0.3333333333333333,
+    "accuracy_on_disagreed_stage3": 0.3333333333333333
+  }
+}

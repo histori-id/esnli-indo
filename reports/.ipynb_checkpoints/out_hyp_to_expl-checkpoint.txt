@@ -1,0 +1,192 @@
+✅ esnli_indo/train_data.jsonl: 5893 baris, kolom = ['annotator_labels', 'label emas', 'kalimat1', 'kalimat2', 'penjelasan']
+✅ esnli_indo/validation_data.jsonl: 1965 baris, kolom = ['annotator_labels', 'label emas', 'kalimat1', 'kalimat2', 'penjelasan']
+✅ esnli_indo/test_data.jsonl: 1965 baris, kolom = ['annotator_labels', 'label emas', 'kalimat1', 'kalimat2', 'penjelasan']
+[train] 0 baris dibuang (label '-' atau teks kosong), sisa 5893
+[validation] 0 baris dibuang (label '-' atau teks kosong), sisa 1965
+trainable params: 3,796,992 || all params: 271,895,168 || trainable%: 1.3965
+Contoh input : <bos>Hipotesis: Orang-orang ada di komputer mereka
+Penjelasan: Orang-orang melihat kamera atau komputer mereka, yang merupakan barang yang berbeda.<eos>
+Contoh target:  Orang-orang melihat kamera atau komputer mereka, yang merupakan barang yang berbeda.<eos>
+Memulai pelatihan di device: cuda:0 | LoRA | lr=0.0002
+{'loss': '2.695', 'grad_norm': '2.529', 'learning_rate': '0.0001945', 'epoch': '0.271'}
+{'loss': '2.377', 'grad_norm': '3.351', 'learning_rate': '0.0001716', 'epoch': '0.542'}
+{'loss': '2.34', 'grad_norm': '3.061', 'learning_rate': '0.000135', 'epoch': '0.813'}
+{'loss': '2.211', 'grad_norm': '2.843', 'learning_rate': '9.188e-05', 'epoch': '1.084'}
+{'loss': '2.058', 'grad_norm': '9.257', 'learning_rate': '5.025e-05', 'epoch': '1.355'}
+{'loss': '2.032', 'grad_norm': '3.037', 'learning_rate': '1.808e-05', 'epoch': '1.626'}
+{'loss': '2.038', 'grad_norm': '3.281', 'learning_rate': '1.465e-06', 'epoch': '1.897'}
+{'eval_loss': '2.235', 'eval_runtime': '4.607', 'eval_samples_per_second': '426.5', 'eval_steps_per_second': '13.46', 'epoch': '2'}
+{'train_runtime': '145.6', 'train_samples_per_second': '80.94', 'train_steps_per_second': '5.068', 'train_loss': '2.242', 'epoch': '2'}
+Model terbaik disimpan di outputs/hyp_to_expl_gemma/best_model
+[validation] 0 baris dibuang (label '-' atau teks kosong), sisa 1965
+
+Generasi penjelasan untuk validation (1965 contoh)...
+  generasi 32/1965
+  generasi 64/1965
+  generasi 96/1965
+  generasi 128/1965
+  generasi 160/1965
+  generasi 192/1965
+  generasi 224/1965
+  generasi 256/1965
+  generasi 288/1965
+  generasi 320/1965
+  generasi 352/1965
+  generasi 384/1965
+  generasi 416/1965
+  generasi 448/1965
+  generasi 480/1965
+  generasi 512/1965
+  generasi 544/1965
+  generasi 576/1965
+  generasi 608/1965
+  generasi 640/1965
+  generasi 672/1965
+  generasi 704/1965
+  generasi 736/1965
+  generasi 768/1965
+  generasi 800/1965
+  generasi 832/1965
+  generasi 864/1965
+  generasi 896/1965
+  generasi 928/1965
+  generasi 960/1965
+  generasi 992/1965
+  generasi 1024/1965
+  generasi 1056/1965
+  generasi 1088/1965
+  generasi 1120/1965
+  generasi 1152/1965
+  generasi 1184/1965
+  generasi 1216/1965
+  generasi 1248/1965
+  generasi 1280/1965
+  generasi 1312/1965
+  generasi 1344/1965
+  generasi 1376/1965
+  generasi 1408/1965
+  generasi 1440/1965
+  generasi 1472/1965
+  generasi 1504/1965
+  generasi 1536/1965
+  generasi 1568/1965
+  generasi 1600/1965
+  generasi 1632/1965
+  generasi 1664/1965
+  generasi 1696/1965
+  generasi 1728/1965
+  generasi 1760/1965
+  generasi 1792/1965
+  generasi 1824/1965
+  generasi 1856/1965
+  generasi 1888/1965
+  generasi 1920/1965
+  generasi 1952/1965
+  generasi 1965/1965
+=======================================================
+   Hasil Generasi — VALIDATION
+=======================================================
+BLEU       : 7.85  (1 referensi)
+ROUGE-L F1 : 27.79
+- Hipotesis : Sekelompok anak laki-laki sedang belajar untuk ujian.
+  Referensi : Jawaban: Sekelompok anak laki-laki tidak bisa belajar di lantai gym.
+  Prediksi  : Anak-anak yang belajar untuk ujian tidak selalu belajar untuk ujian.
+- Hipotesis : Pemandu sorak sedang tampil.
+  Referensi : Cheerleaders perform adalah pembahasan dari cheerleaders performing.
+  Prediksi  : Pemandu tidak bisa tampil dan berbicara pada saat yang sama.
+- Hipotesis : Seorang pria berjas dengan batu bata emas dan tanda nama memberi isyarat dengan tangannya
+  Referensi : Ada tombol emas atau bata.
+  Prediksi  : Seorang pria dengan baju dan celana pendek adalah pria dengan baju dan celana pendek.
+- Hipotesis : Seekor anjing putih sedang mengunyah makanannya.
+  Referensi : Anjing yang membawa bola di mulutnya tidak bisa mengunyah makanannya.
+  Prediksi  : Anjing putih tidak bisa mengunyah makanan saat makan.
+- Hipotesis : Dua orang sedang duduk di sebuah gang.
+  Referensi : Orang tidak bisa berjalan dan duduk pada saat yang sama
+  Prediksi  : Dua orang duduk di sebuah gang.
+[test] 0 baris dibuang (label '-' atau teks kosong), sisa 1965
+
+Generasi penjelasan untuk test (1965 contoh)...
+  generasi 32/1965
+  generasi 64/1965
+  generasi 96/1965
+  generasi 128/1965
+  generasi 160/1965
+  generasi 192/1965
+  generasi 224/1965
+  generasi 256/1965
+  generasi 288/1965
+  generasi 320/1965
+  generasi 352/1965
+  generasi 384/1965
+  generasi 416/1965
+  generasi 448/1965
+  generasi 480/1965
+  generasi 512/1965
+  generasi 544/1965
+  generasi 576/1965
+  generasi 608/1965
+  generasi 640/1965
+  generasi 672/1965
+  generasi 704/1965
+  generasi 736/1965
+  generasi 768/1965
+  generasi 800/1965
+  generasi 832/1965
+  generasi 864/1965
+  generasi 896/1965
+  generasi 928/1965
+  generasi 960/1965
+  generasi 992/1965
+  generasi 1024/1965
+  generasi 1056/1965
+  generasi 1088/1965
+  generasi 1120/1965
+  generasi 1152/1965
+  generasi 1184/1965
+  generasi 1216/1965
+  generasi 1248/1965
+  generasi 1280/1965
+  generasi 1312/1965
+  generasi 1344/1965
+  generasi 1376/1965
+  generasi 1408/1965
+  generasi 1440/1965
+  generasi 1472/1965
+  generasi 1504/1965
+  generasi 1536/1965
+  generasi 1568/1965
+  generasi 1600/1965
+  generasi 1632/1965
+  generasi 1664/1965
+  generasi 1696/1965
+  generasi 1728/1965
+  generasi 1760/1965
+  generasi 1792/1965
+  generasi 1824/1965
+  generasi 1856/1965
+  generasi 1888/1965
+  generasi 1920/1965
+  generasi 1952/1965
+  generasi 1965/1965
+=======================================================
+   Hasil Generasi — TEST
+=======================================================
+BLEU       : 7.65  (1 referensi)
+ROUGE-L F1 : 28.09
+- Hipotesis : Ada banyak orang di kereta api.
+  Referensi : Anda tidak bisa berada di kolam renang dan kereta api pada saat yang sama.
+  Prediksi  : Orang-orang yang naik kereta api adalah banyak orang.
+- Hipotesis : Seekor binatang sedang berlari di luar.
+  Referensi : Anjing adalah hewan.
+  Prediksi  : Seseorang tidak bisa berjalan di luar dan berlari pada saat yang sama.
+- Hipotesis : Orang itu sedang berlomba.
+  Referensi : Anda tidak bisa menyimpulkan dia dalam perlombaan.
+  Prediksi  : Orang itu berlomba karena dia berlomba.
+- Hipotesis : Seorang pria memakai baju.
+  Referensi : Anda tidak bisa menyimpulkan dia memakai coveralls.
+  Prediksi  : Pria itu memakai baju.
+- Hipotesis : Beberapa petugas pemadam kebakaran sedang memadamkan api.
+  Referensi : Jika para pejabat bersiap untuk memutar mobil ke kanan setelah kecelakaan maka mereka tidak memadamkan api.
+  Prediksi  : Tidak semua petugas pemadam kebakaran adalah petugas pemadam kebakaran.
+
+Selesai. Hasil di outputs/hyp_to_expl_gemma/results.json

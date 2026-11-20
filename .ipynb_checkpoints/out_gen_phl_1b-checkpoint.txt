@@ -1,0 +1,214 @@
+✅ dataset/nllb/train_data.jsonl: 5893 baris, kolom = ['annotator_labels', 'label emas', 'kalimat1', 'kalimat2', 'penjelasan']
+✅ dataset/nllb/validation_data.jsonl: 1965 baris, kolom = ['annotator_labels', 'label emas', 'kalimat1', 'kalimat2', 'penjelasan']
+✅ dataset/nllb/test_data.jsonl: 1965 baris, kolom = ['annotator_labels', 'label emas', 'kalimat1', 'kalimat2', 'penjelasan']
+[train] 0 baris dibuang (label '-' atau teks kosong), sisa 5893
+[validation] 0 baris dibuang (label '-' atau teks kosong), sisa 1965
+trainable params: 13,045,760 || all params: 1,012,931,712 || trainable%: 1.2879
+Contoh input : <bos>Premis: Sekelompok orang di gang melihat ke kamera.
+Hipotesis: Orang-orang ada di komputer mereka
+Label: kontradiksi
+Penjelasan: Orang-orang melihat kamera atau komputer mereka, yang merupakan barang yang berbeda.<eos>
+Contoh target:  Orang-orang melihat kamera atau komputer mereka, yang merupakan barang yang berbeda.<eos>
+Memulai pelatihan di device: cuda:0 | LoRA | lr=0.0002
+{'loss': '1.903', 'grad_norm': '1.836', 'learning_rate': '0.0001945', 'epoch': '0.271'}
+{'loss': '1.617', 'grad_norm': '2.334', 'learning_rate': '0.0001716', 'epoch': '0.542'}
+{'loss': '1.594', 'grad_norm': '2.07', 'learning_rate': '0.000135', 'epoch': '0.813'}
+{'loss': '1.475', 'grad_norm': '1.98', 'learning_rate': '9.188e-05', 'epoch': '1.084'}
+{'loss': '1.279', 'grad_norm': '2.361', 'learning_rate': '5.025e-05', 'epoch': '1.355'}
+{'loss': '1.244', 'grad_norm': '2.438', 'learning_rate': '1.808e-05', 'epoch': '1.626'}
+{'loss': '1.239', 'grad_norm': '2.19', 'learning_rate': '1.465e-06', 'epoch': '1.897'}
+{'eval_loss': '1.534', 'eval_runtime': '6.609', 'eval_samples_per_second': '297.3', 'eval_steps_per_second': '9.381', 'epoch': '2'}
+{'train_runtime': '195.3', 'train_samples_per_second': '60.35', 'train_steps_per_second': '3.779', 'train_loss': '1.468', 'epoch': '2'}
+Model terbaik disimpan di outputs/phl_to_expl_gemma/best_model
+[validation] 0 baris dibuang (label '-' atau teks kosong), sisa 1965
+
+Generasi penjelasan untuk validation (1965 contoh)...
+  generasi 32/1965
+  generasi 64/1965
+  generasi 96/1965
+  generasi 128/1965
+  generasi 160/1965
+  generasi 192/1965
+  generasi 224/1965
+  generasi 256/1965
+  generasi 288/1965
+  generasi 320/1965
+  generasi 352/1965
+  generasi 384/1965
+  generasi 416/1965
+  generasi 448/1965
+  generasi 480/1965
+  generasi 512/1965
+  generasi 544/1965
+  generasi 576/1965
+  generasi 608/1965
+  generasi 640/1965
+  generasi 672/1965
+  generasi 704/1965
+  generasi 736/1965
+  generasi 768/1965
+  generasi 800/1965
+  generasi 832/1965
+  generasi 864/1965
+  generasi 896/1965
+  generasi 928/1965
+  generasi 960/1965
+  generasi 992/1965
+  generasi 1024/1965
+  generasi 1056/1965
+  generasi 1088/1965
+  generasi 1120/1965
+  generasi 1152/1965
+  generasi 1184/1965
+  generasi 1216/1965
+  generasi 1248/1965
+  generasi 1280/1965
+  generasi 1312/1965
+  generasi 1344/1965
+  generasi 1376/1965
+  generasi 1408/1965
+  generasi 1440/1965
+  generasi 1472/1965
+  generasi 1504/1965
+  generasi 1536/1965
+  generasi 1568/1965
+  generasi 1600/1965
+  generasi 1632/1965
+  generasi 1664/1965
+  generasi 1696/1965
+  generasi 1728/1965
+  generasi 1760/1965
+  generasi 1792/1965
+  generasi 1824/1965
+  generasi 1856/1965
+  generasi 1888/1965
+  generasi 1920/1965
+  generasi 1952/1965
+  generasi 1965/1965
+=======================================================
+   Hasil Generasi — VALIDATION
+=======================================================
+BLEU       : 15.06  (1 referensi)
+ROUGE-L F1 : 37.40
+- Premis    : Sekelompok anak laki-laki yang mengenakan jaket olahraga meregangkan kaki mereka di lantai gym saat mereka duduk melingkar.
+  Hipotesis : Sekelompok anak laki-laki sedang belajar untuk ujian.
+  Label     : kontradiksi
+  Referensi : Jawaban: Sekelompok anak laki-laki tidak bisa belajar di lantai gym.
+  Prediksi  : Anak-anak tidak bisa duduk melingkar dan belajar untuk ujian pada saat yang sama.
+- Premis    : Sekelompok pemandu sorak muda dengan kostum merah muda dan putih tampil di atas panggung.
+  Hipotesis : Pemandu sorak sedang tampil.
+  Label     : keterlibatan
+  Referensi : Cheerleaders perform adalah pembahasan dari cheerleaders performing.
+  Prediksi  : Kelompok pemandu sorak sedang tampil karena mereka tampil di atas panggung.
+- Premis    : Seorang pria berjas dengan kancing emas dan tanda nama memberi isyarat dengan tangannya saat dia berbicara kepada pria lain dengan kemeja yang memegang minuman di dalam gelas.
+  Hipotesis : Seorang pria berjas dengan batu bata emas dan tanda nama memberi isyarat dengan tangannya
+  Label     : kontradiksi
+  Referensi : Ada tombol emas atau bata.
+  Prediksi  : Pria itu tidak bisa memberi isyarat dengan tangannya saat dia memberi isyarat dengan tangannya.
+- Premis    : anjing putih membawa bola di mulutnya.
+  Hipotesis : Seekor anjing putih sedang mengunyah makanannya.
+  Label     : kontradiksi
+  Referensi : Anjing yang membawa bola di mulutnya tidak bisa mengunyah makanannya.
+  Prediksi  : Anjing tidak bisa membawa bola di mulutnya dan mengunyah makanannya pada saat yang sama.
+- Premis    : Dua orang berjalan menyusuri gang sempit dengan gedung-gedung besar di setiap sisinya.
+  Hipotesis : Dua orang sedang duduk di sebuah gang.
+  Label     : kontradiksi
+  Referensi : Orang tidak bisa berjalan dan duduk pada saat yang sama
+  Prediksi  : Orang-orang tidak bisa duduk dan berjalan pada saat yang sama.
+[test] 0 baris dibuang (label '-' atau teks kosong), sisa 1965
+
+Generasi penjelasan untuk test (1965 contoh)...
+  generasi 32/1965
+  generasi 64/1965
+  generasi 96/1965
+  generasi 128/1965
+  generasi 160/1965
+  generasi 192/1965
+  generasi 224/1965
+  generasi 256/1965
+  generasi 288/1965
+  generasi 320/1965
+  generasi 352/1965
+  generasi 384/1965
+  generasi 416/1965
+  generasi 448/1965
+  generasi 480/1965
+  generasi 512/1965
+  generasi 544/1965
+  generasi 576/1965
+  generasi 608/1965
+  generasi 640/1965
+  generasi 672/1965
+  generasi 704/1965
+  generasi 736/1965
+  generasi 768/1965
+  generasi 800/1965
+  generasi 832/1965
+  generasi 864/1965
+  generasi 896/1965
+  generasi 928/1965
+  generasi 960/1965
+  generasi 992/1965
+  generasi 1024/1965
+  generasi 1056/1965
+  generasi 1088/1965
+  generasi 1120/1965
+  generasi 1152/1965
+  generasi 1184/1965
+  generasi 1216/1965
+  generasi 1248/1965
+  generasi 1280/1965
+  generasi 1312/1965
+  generasi 1344/1965
+  generasi 1376/1965
+  generasi 1408/1965
+  generasi 1440/1965
+  generasi 1472/1965
+  generasi 1504/1965
+  generasi 1536/1965
+  generasi 1568/1965
+  generasi 1600/1965
+  generasi 1632/1965
+  generasi 1664/1965
+  generasi 1696/1965
+  generasi 1728/1965
+  generasi 1760/1965
+  generasi 1792/1965
+  generasi 1824/1965
+  generasi 1856/1965
+  generasi 1888/1965
+  generasi 1920/1965
+  generasi 1952/1965
+  generasi 1965/1965
+=======================================================
+   Hasil Generasi — TEST
+=======================================================
+BLEU       : 15.37  (1 referensi)
+ROUGE-L F1 : 37.76
+- Premis    : Seorang gadis muda dengan sayap air melompat ke kolam yang ramai
+  Hipotesis : Ada banyak orang di kereta api.
+  Label     : kontradiksi
+  Referensi : Anda tidak bisa berada di kolam renang dan kereta api pada saat yang sama.
+  Prediksi  : Orang-orang tidak bisa berada di kolam renang dan kereta api pada saat yang sama.
+- Premis    : Seekor anjing berlari di ombak di pantai.
+  Hipotesis : Seekor binatang sedang berlari di luar.
+  Label     : keterlibatan
+  Referensi : Anjing adalah hewan.
+  Prediksi  : Anjing adalah hewan dan berlari di ombak di pantai berarti berlari di luar.
+- Premis    : Seseorang mengendarai kendaraan roda empat menendang banyak kotoran di bukit pasir.
+  Hipotesis : Orang itu sedang berlomba.
+  Label     : netral
+  Referensi : Anda tidak bisa menyimpulkan dia dalam perlombaan.
+  Prediksi  : Hanya karena seseorang menendang kotoran di bukit pasir tidak berarti mereka berlomba.
+- Premis    : Seorang kondektur kereta api dengan baju pelindung berdiri di pintu jalan setapak.
+  Hipotesis : Seorang pria memakai baju.
+  Label     : netral
+  Referensi : Anda tidak bisa menyimpulkan dia memakai coveralls.
+  Prediksi  : Anda tidak bisa menyimpulkan dia memakai baju.
+- Premis    : Sekelompok petugas pemadam kebakaran dan pejabat bersiap untuk membelokkan mobil ke sisi kanan setelah kecelakaan.
+  Hipotesis : Beberapa petugas pemadam kebakaran sedang memadamkan api.
+  Label     : kontradiksi
+  Referensi : Jika para pejabat bersiap untuk memutar mobil ke kanan setelah kecelakaan maka mereka tidak memadamkan api.
+  Prediksi  : Petugas pemadam kebakaran tidak bisa memadamkan kebakaran dan memutar mobil pada saat yang sama.
+
+Selesai. Hasil di outputs/phl_to_expl_gemma/results.json

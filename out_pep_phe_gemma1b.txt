@@ -1,0 +1,153 @@
+Device: cuda | input tahap 3: phe (outputs/phe_to_label_xlmr)
+[test] 0 baris dibuang (label '-' atau teks kosong), sisa 1965
+[transformers] [1mXLMRobertaModel LOAD REPORT[0m from: xlm-roberta-base
+Key                       | Status     |  | 
+--------------------------+------------+--+-
+lm_head.dense.bias        | UNEXPECTED |  | 
+lm_head.layer_norm.weight | UNEXPECTED |  | 
+lm_head.layer_norm.bias   | UNEXPECTED |  | 
+lm_head.dense.weight      | UNEXPECTED |  | 
+lm_head.bias              | UNEXPECTED |  | 
+
+Notes:
+- UNEXPECTED:	can be ignored when loading from different task/architecture; not ok if you expect identical arch.
+✅ Classifier dimuat dari outputs/ph_to_label_xlmr (base: xlm-roberta-base, max_length: 128)
+
+============================================================
+   TAHAP 1 — Label awal (P+H) vs label emas
+============================================================
+Akurasi         : 0.7690
+F1-Score (Macro): 0.7677
+              precision    recall  f1-score   support
+
+keterlibatan     0.8110    0.8279    0.8194       674
+      netral     0.7331    0.7081    0.7204       644
+ kontradiksi     0.7588    0.7682    0.7634       647
+
+    accuracy                         0.7690      1965
+   macro avg     0.7676    0.7680    0.7677      1965
+weighted avg     0.7683    0.7690    0.7685      1965
+
+Confusion matrix (baris=acuan, kolom=prediksi): ['keterlibatan', 'netral', 'kontradiksi']
+[[558  67  49]
+ [ 79 456 109]
+ [ 51  99 497]]
+✅ Generator dimuat: base google/gemma-3-1b-pt + adapter LoRA outputs/phl_to_expl_gemma/best_model
+
+Generasi penjelasan dengan label awal (1965 contoh)...
+  generasi 32/1965
+  generasi 64/1965
+  generasi 96/1965
+  generasi 128/1965
+  generasi 160/1965
+  generasi 192/1965
+  generasi 224/1965
+  generasi 256/1965
+  generasi 288/1965
+  generasi 320/1965
+  generasi 352/1965
+  generasi 384/1965
+  generasi 416/1965
+  generasi 448/1965
+  generasi 480/1965
+  generasi 512/1965
+  generasi 544/1965
+  generasi 576/1965
+  generasi 608/1965
+  generasi 640/1965
+  generasi 672/1965
+  generasi 704/1965
+  generasi 736/1965
+  generasi 768/1965
+  generasi 800/1965
+  generasi 832/1965
+  generasi 864/1965
+  generasi 896/1965
+  generasi 928/1965
+  generasi 960/1965
+  generasi 992/1965
+  generasi 1024/1965
+  generasi 1056/1965
+  generasi 1088/1965
+  generasi 1120/1965
+  generasi 1152/1965
+  generasi 1184/1965
+  generasi 1216/1965
+  generasi 1248/1965
+  generasi 1280/1965
+  generasi 1312/1965
+  generasi 1344/1965
+  generasi 1376/1965
+  generasi 1408/1965
+  generasi 1440/1965
+  generasi 1472/1965
+  generasi 1504/1965
+  generasi 1536/1965
+  generasi 1568/1965
+  generasi 1600/1965
+  generasi 1632/1965
+  generasi 1664/1965
+  generasi 1696/1965
+  generasi 1728/1965
+  generasi 1760/1965
+  generasi 1792/1965
+  generasi 1824/1965
+  generasi 1856/1965
+  generasi 1888/1965
+  generasi 1920/1965
+  generasi 1952/1965
+  generasi 1965/1965
+
+============================================================
+   TAHAP 2 — Kualitas penjelasan
+============================================================
+  semua                  n=1965   BLEU=14.14  ROUGE-L=36.21
+[transformers] [1mXLMRobertaModel LOAD REPORT[0m from: xlm-roberta-base
+Key                       | Status     |  | 
+--------------------------+------------+--+-
+lm_head.dense.bias        | UNEXPECTED |  | 
+lm_head.layer_norm.weight | UNEXPECTED |  | 
+lm_head.layer_norm.bias   | UNEXPECTED |  | 
+lm_head.dense.weight      | UNEXPECTED |  | 
+lm_head.bias              | UNEXPECTED |  | 
+
+Notes:
+- UNEXPECTED:	can be ignored when loading from different task/architecture; not ok if you expect identical arch.
+✅ Classifier dimuat dari outputs/phe_to_label_xlmr (base: xlm-roberta-base, max_length: 192)
+
+============================================================
+   TAHAP 3 — LABEL AKHIR (phe) vs label emas
+============================================================
+Akurasi         : 0.7690
+F1-Score (Macro): 0.7678
+              precision    recall  f1-score   support
+
+keterlibatan     0.8131    0.8264    0.8197       674
+      netral     0.7315    0.7065    0.7188       644
+ kontradiksi     0.7584    0.7713    0.7648       647
+
+    accuracy                         0.7690      1965
+   macro avg     0.7677    0.7681    0.7678      1965
+weighted avg     0.7683    0.7690    0.7685      1965
+
+Confusion matrix (baris=acuan, kolom=prediksi): ['keterlibatan', 'netral', 'kontradiksi']
+[[557  68  49]
+ [ 79 455 110]
+ [ 49  99 499]]
+
+============================================================
+   RINGKASAN
+============================================================
+Akurasi tahap 1 (awal)  : 0.7690
+Akurasi tahap 3 (akhir) : 0.7690
+Label berubah           : 9 dari 1965 (0.46%)
+  benar -> salah        : 3
+  salah -> benar        : 3
+  salah -> salah lain   : 3
+Prediksi selektif (hanya jika tahap 1 == tahap 3):
+  coverage              : 99.54%
+  akurasi (sepakat)     : 0.7710
+  akurasi tidak sepakat : tahap1=0.3333 | tahap3=0.3333
+
+Selesai. CSV: outputs/predict_explain_predict_phe/predict_explain_predict_test.csv
+Metrik: outputs/predict_explain_predict_phe/results.json

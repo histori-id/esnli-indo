@@ -1,0 +1,128 @@
+✅ dataset/nllb/train_data.jsonl: 5893 baris, kolom = ['annotator_labels', 'label emas', 'kalimat1', 'kalimat2', 'penjelasan']
+✅ dataset/nllb/validation_data.jsonl: 1965 baris, kolom = ['annotator_labels', 'label emas', 'kalimat1', 'kalimat2', 'penjelasan']
+✅ dataset/nllb/test_data.jsonl: 1965 baris, kolom = ['annotator_labels', 'label emas', 'kalimat1', 'kalimat2', 'penjelasan']
+[train] 0 baris dibuang (label '-'/tidak valid atau teks kosong), sisa 5893
+[validation] 0 baris dibuang (label '-'/tidak valid atau teks kosong), sisa 1965
+Distribusi label train:
+ label_str
+keterlibatan    2020
+kontradiksi     1942
+netral          1931
+Name: count, dtype: int64
+DatasetDict({
+    train: Dataset({
+        features: ['labels', 'input_ids', 'attention_mask'],
+        num_rows: 5893
+    })
+    validation: Dataset({
+        features: ['labels', 'input_ids', 'attention_mask'],
+        num_rows: 1965
+    })
+})
+Contoh input ter-tokenisasi: <s> Sekelompok orang di gang melihat ke kamera.</s></s> Orang-orang ada di komputer mereka</s>
+[transformers] [1mXLMRobertaModel LOAD REPORT[0m from: xlm-roberta-base
+Key                       | Status     |  | 
+--------------------------+------------+--+-
+lm_head.dense.bias        | UNEXPECTED |  | 
+lm_head.layer_norm.bias   | UNEXPECTED |  | 
+lm_head.layer_norm.weight | UNEXPECTED |  | 
+lm_head.dense.weight      | UNEXPECTED |  | 
+lm_head.bias              | UNEXPECTED |  | 
+
+Notes:
+- UNEXPECTED:	can be ignored when loading from different task/architecture; not ok if you expect identical arch.
+Memulai pelatihan di device: cuda:0
+{'loss': '1.101', 'grad_norm': '2.045', 'learning_rate': '2.683e-06', 'epoch': '0.271'}
+{'loss': '1.101', 'grad_norm': '5.929', 'learning_rate': '5.393e-06', 'epoch': '0.542'}
+{'loss': '1.1', 'grad_norm': '3.529', 'learning_rate': '8.103e-06', 'epoch': '0.813'}
+{'eval_loss': '1.073', 'eval_accuracy': '0.4936', 'eval_macro_f1': '0.4523', 'eval_runtime': '0.5008', 'eval_samples_per_second': '3924', 'eval_steps_per_second': '61.91', 'epoch': '1'}
+{'loss': '1.091', 'grad_norm': '5.751', 'learning_rate': '9.91e-06', 'epoch': '1.084'}
+{'loss': '1.013', 'grad_norm': '31.74', 'learning_rate': '9.609e-06', 'epoch': '1.355'}
+{'loss': '0.925', 'grad_norm': '31.83', 'learning_rate': '9.307e-06', 'epoch': '1.626'}
+{'loss': '0.8627', 'grad_norm': '21.78', 'learning_rate': '9.006e-06', 'epoch': '1.897'}
+{'eval_loss': '0.7571', 'eval_accuracy': '0.7003', 'eval_macro_f1': '0.695', 'eval_runtime': '0.4905', 'eval_samples_per_second': '4006', 'eval_steps_per_second': '63.2', 'epoch': '2'}
+{'loss': '0.7824', 'grad_norm': '33.65', 'learning_rate': '8.705e-06', 'epoch': '2.168'}
+{'loss': '0.7374', 'grad_norm': '53.16', 'learning_rate': '8.404e-06', 'epoch': '2.439'}
+{'loss': '0.7124', 'grad_norm': '27.16', 'learning_rate': '8.103e-06', 'epoch': '2.71'}
+{'loss': '0.7189', 'grad_norm': '40.91', 'learning_rate': '7.802e-06', 'epoch': '2.981'}
+{'eval_loss': '0.6673', 'eval_accuracy': '0.7425', 'eval_macro_f1': '0.7391', 'eval_runtime': '0.4863', 'eval_samples_per_second': '4041', 'eval_steps_per_second': '63.75', 'epoch': '3'}
+{'loss': '0.6116', 'grad_norm': '36.79', 'learning_rate': '7.501e-06', 'epoch': '3.252'}
+{'loss': '0.6447', 'grad_norm': '40.86', 'learning_rate': '7.2e-06', 'epoch': '3.523'}
+{'loss': '0.6077', 'grad_norm': '26.77', 'learning_rate': '6.899e-06', 'epoch': '3.794'}
+{'eval_loss': '0.6628', 'eval_accuracy': '0.7389', 'eval_macro_f1': '0.7387', 'eval_runtime': '0.4891', 'eval_samples_per_second': '4018', 'eval_steps_per_second': '63.38', 'epoch': '4'}
+{'loss': '0.5985', 'grad_norm': '29.52', 'learning_rate': '6.597e-06', 'epoch': '4.065'}
+{'loss': '0.5143', 'grad_norm': '14.04', 'learning_rate': '6.296e-06', 'epoch': '4.336'}
+{'loss': '0.5087', 'grad_norm': '39.58', 'learning_rate': '5.995e-06', 'epoch': '4.607'}
+{'loss': '0.5433', 'grad_norm': '20.59', 'learning_rate': '5.694e-06', 'epoch': '4.878'}
+{'eval_loss': '0.6679', 'eval_accuracy': '0.7613', 'eval_macro_f1': '0.7595', 'eval_runtime': '0.4871', 'eval_samples_per_second': '4034', 'eval_steps_per_second': '63.64', 'epoch': '5'}
+{'loss': '0.4521', 'grad_norm': '23.97', 'learning_rate': '5.393e-06', 'epoch': '5.149'}
+{'loss': '0.472', 'grad_norm': '36.24', 'learning_rate': '5.092e-06', 'epoch': '5.42'}
+{'loss': '0.4638', 'grad_norm': '27.7', 'learning_rate': '4.791e-06', 'epoch': '5.691'}
+{'loss': '0.462', 'grad_norm': '16.18', 'learning_rate': '4.49e-06', 'epoch': '5.962'}
+{'eval_loss': '0.7066', 'eval_accuracy': '0.7588', 'eval_macro_f1': '0.7567', 'eval_runtime': '0.4908', 'eval_samples_per_second': '4004', 'eval_steps_per_second': '63.16', 'epoch': '6'}
+{'loss': '0.4214', 'grad_norm': '25.34', 'learning_rate': '4.188e-06', 'epoch': '6.233'}
+{'loss': '0.3689', 'grad_norm': '36.4', 'learning_rate': '3.887e-06', 'epoch': '6.504'}
+{'loss': '0.3674', 'grad_norm': '20.74', 'learning_rate': '3.586e-06', 'epoch': '6.775'}
+{'eval_loss': '0.7538', 'eval_accuracy': '0.7639', 'eval_macro_f1': '0.7638', 'eval_runtime': '0.4857', 'eval_samples_per_second': '4045', 'eval_steps_per_second': '63.82', 'epoch': '7'}
+{'loss': '0.4046', 'grad_norm': '4.497', 'learning_rate': '3.285e-06', 'epoch': '7.046'}
+{'loss': '0.3621', 'grad_norm': '81.56', 'learning_rate': '2.984e-06', 'epoch': '7.317'}
+{'loss': '0.3564', 'grad_norm': '12.52', 'learning_rate': '2.683e-06', 'epoch': '7.588'}
+{'loss': '0.3535', 'grad_norm': '30.1', 'learning_rate': '2.382e-06', 'epoch': '7.859'}
+{'eval_loss': '0.7601', 'eval_accuracy': '0.7705', 'eval_macro_f1': '0.7687', 'eval_runtime': '0.4887', 'eval_samples_per_second': '4021', 'eval_steps_per_second': '63.43', 'epoch': '8'}
+{'loss': '0.33', 'grad_norm': '35.82', 'learning_rate': '2.081e-06', 'epoch': '8.13'}
+{'loss': '0.345', 'grad_norm': '52.29', 'learning_rate': '1.78e-06', 'epoch': '8.401'}
+{'loss': '0.2994', 'grad_norm': '38.66', 'learning_rate': '1.478e-06', 'epoch': '8.672'}
+{'loss': '0.3293', 'grad_norm': '101.2', 'learning_rate': '1.177e-06', 'epoch': '8.943'}
+{'eval_loss': '0.8309', 'eval_accuracy': '0.7639', 'eval_macro_f1': '0.7615', 'eval_runtime': '0.4872', 'eval_samples_per_second': '4033', 'eval_steps_per_second': '63.63', 'epoch': '9'}
+{'loss': '0.291', 'grad_norm': '36.62', 'learning_rate': '8.762e-07', 'epoch': '9.214'}
+{'loss': '0.2881', 'grad_norm': '63.05', 'learning_rate': '5.751e-07', 'epoch': '9.485'}
+{'loss': '0.3116', 'grad_norm': '16.39', 'learning_rate': '2.74e-07', 'epoch': '9.756'}
+{'eval_loss': '0.8297', 'eval_accuracy': '0.7705', 'eval_macro_f1': '0.7694', 'eval_runtime': '0.4846', 'eval_samples_per_second': '4055', 'eval_steps_per_second': '63.97', 'epoch': '10'}
+{'train_runtime': '221.1', 'train_samples_per_second': '266.5', 'train_steps_per_second': '16.69', 'train_loss': '0.5729', 'epoch': '10'}
+Bobot model terbaik disimpan di outputs/ph_to_label_xlmr/best_ph_to_label_xlmr_model.pt
+[validation] 0 baris dibuang (label '-'/tidak valid atau teks kosong), sisa 1965
+
+=======================================================
+   Laporan Kinerja — VALIDATION (kalimat1 + kalimat2)
+=======================================================
+Akurasi         : 0.7705
+F1-Score (Macro): 0.7694
+-------------------------------------------------------
+              precision    recall  f1-score   support
+
+keterlibatan     0.8072    0.8323    0.8196       674
+      netral     0.7196    0.7185    0.7191       643
+ kontradiksi     0.7818    0.7577    0.7696       648
+
+    accuracy                         0.7705      1965
+   macro avg     0.7696    0.7695    0.7694      1965
+weighted avg     0.7702    0.7705    0.7702      1965
+
+Confusion matrix (baris=gold, kolom=prediksi): ['keterlibatan', 'netral', 'kontradiksi']
+[[561  76  37]
+ [ 81 462 100]
+ [ 53 104 491]]
+[test] 0 baris dibuang (label '-'/tidak valid atau teks kosong), sisa 1965
+
+=======================================================
+   Laporan Kinerja — TEST (kalimat1 + kalimat2)
+=======================================================
+Akurasi         : 0.7700
+F1-Score (Macro): 0.7688
+-------------------------------------------------------
+              precision    recall  f1-score   support
+
+keterlibatan     0.8120    0.8264    0.8191       674
+      netral     0.7355    0.7081    0.7215       644
+ kontradiksi     0.7587    0.7728    0.7657       647
+
+    accuracy                         0.7700      1965
+   macro avg     0.7687    0.7691    0.7688      1965
+weighted avg     0.7694    0.7700    0.7695      1965
+
+Confusion matrix (baris=gold, kolom=prediksi): ['keterlibatan', 'netral', 'kontradiksi']
+[[557  68  49]
+ [ 78 456 110]
+ [ 51  96 500]]
+
+Selesai. Hasil di outputs/ph_to_label_xlmr/results.json

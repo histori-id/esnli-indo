@@ -125,11 +125,11 @@ def compute_metrics(eval_pred):
 # --------------------------------------------------------------------------- #
 def parse_args():
     p = argparse.ArgumentParser()
-    p.add_argument("--train_file", default="esnli-indo/dataset/train_data.jsonl")
-    p.add_argument("--dev_file", default="esnli-indo/dataset/validation_data.jsonl")
-    p.add_argument("--test_file", default="esnli-indo/dataset/test_data.jsonl")
-    p.add_argument("--label_col", default="label emas")
-    p.add_argument("--text_col", default="penjelasan")
+    p.add_argument("--train_file", default="dataset/gemini/train.jsonl")
+    p.add_argument("--dev_file", default="dataset/gemini/validation.jsonl")
+    p.add_argument("--test_file", default="dataset/gemini/test.jsonl")
+    p.add_argument("--label_col", default="gold_label")
+    p.add_argument("--text_col", default="Explanation_1")
     p.add_argument("--eval_text_cols", nargs="*", default=None,
                    help="Kolom penjelasan untuk evaluasi dev/test, mis. penjelasan_1 penjelasan_2 "
                         "penjelasan_3. Default: sama dengan --text_col.")
@@ -138,11 +138,11 @@ def parse_args():
     p.add_argument("--max_length", type=int, default=128)
     p.add_argument("--batch_size", type=int, default=16)
     p.add_argument("--eval_batch_size", type=int, default=64)
-    p.add_argument("--lr", type=float, default=2e-5)
-    p.add_argument("--epochs", type=int, default=5)
+    p.add_argument("--lr", type=float, default=1e-5)
+    p.add_argument("--epochs", type=int, default=11)
     p.add_argument("--warmup_ratio", type=float, default=0.1)
     p.add_argument("--weight_decay", type=float, default=0.01)
-    p.add_argument("--patience", type=int, default=2, help="Early stopping per epoch; 0 = nonaktif")
+    p.add_argument("--patience", type=int, default=4, help="Early stopping per epoch; 0 = nonaktif")
     p.add_argument("--max_train_samples", type=int, default=None)
     p.add_argument("--seed", type=int, default=42)
     return p.parse_args()

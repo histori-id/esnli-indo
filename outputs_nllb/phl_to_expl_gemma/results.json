@@ -1,0 +1,45 @@
+{
+  "config": {
+    "train_file": "dataset/nllb/train_data.jsonl",
+    "dev_file": "dataset/nllb/validation_data.jsonl",
+    "test_file": "dataset/nllb/test_data.jsonl",
+    "premise_col": "kalimat1",
+    "hypothesis_col": "kalimat2",
+    "explanation_col": "penjelasan",
+    "eval_explanation_cols": null,
+    "label_col": "label emas",
+    "model_name": "google/gemma-3-1b-pt",
+    "output_dir": "outputs/phl_to_expl_gemma",
+    "full_finetune": false,
+    "lora_r": 16,
+    "lora_alpha": 32,
+    "lora_dropout": 0.05,
+    "max_length": 192,
+    "batch_size": 16,
+    "eval_batch_size": 32,
+    "grad_accum": 1,
+    "lr": 0.0002,
+    "epochs": 2,
+    "warmup_ratio": 0.03,
+    "weight_decay": 0.0,
+    "eval_steps": 2000,
+    "patience": 3,
+    "max_train_samples": null,
+    "max_eval_loss_samples": 2000,
+    "max_gen_samples": null,
+    "gen_batch_size": 32,
+    "max_new_tokens": 80,
+    "num_beams": 4,
+    "seed": 42
+  },
+  "validation": {
+    "bleu": 15.06190592961568,
+    "rougeL_f1": 37.39841516515703,
+    "num_references": 1
+  },
+  "test": {
+    "bleu": 15.367658984040837,
+    "rougeL_f1": 37.764381348722274,
+    "num_references": 1
+  }
+}

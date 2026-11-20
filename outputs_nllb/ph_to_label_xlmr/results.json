@@ -1,0 +1,130 @@
+{
+  "config": {
+    "train_file": "dataset/nllb/train_data.jsonl",
+    "dev_file": "dataset/nllb/validation_data.jsonl",
+    "test_file": "dataset/nllb/test_data.jsonl",
+    "label_col": "label emas",
+    "premise_col": "kalimat1",
+    "hypothesis_col": "kalimat2",
+    "model_name": "xlm-roberta-base",
+    "output_dir": "outputs/ph_to_label_xlmr",
+    "max_length": 128,
+    "batch_size": 16,
+    "eval_batch_size": 64,
+    "lr": 1e-05,
+    "epochs": 10,
+    "warmup_ratio": 0.1,
+    "weight_decay": 0.01,
+    "patience": 4,
+    "max_train_samples": null,
+    "seed": 42
+  },
+  "validation": {
+    "accuracy": 0.7704834605597964,
+    "macro_f1": 0.769411652479599,
+    "per_class": {
+      "keterlibatan": {
+        "precision": 0.8071942446043165,
+        "recall": 0.8323442136498517,
+        "f1-score": 0.8195763330898466,
+        "support": 674.0
+      },
+      "netral": {
+        "precision": 0.719626168224299,
+        "recall": 0.71850699844479,
+        "f1-score": 0.7190661478599222,
+        "support": 643.0
+      },
+      "kontradiksi": {
+        "precision": 0.7818471337579618,
+        "recall": 0.7577160493827161,
+        "f1-score": 0.7695924764890282,
+        "support": 648.0
+      },
+      "accuracy": 0.7704834605597964,
+      "macro avg": {
+        "precision": 0.7695558488621925,
+        "recall": 0.7695224204924526,
+        "f1-score": 0.769411652479599,
+        "support": 1965.0
+      },
+      "weighted avg": {
+        "precision": 0.7701809107922101,
+        "recall": 0.7704834605597964,
+        "f1-score": 0.7702035146775454,
+        "support": 1965.0
+      }
+    },
+    "confusion_matrix": [
+      [
+        561,
+        76,
+        37
+      ],
+      [
+        81,
+        462,
+        100
+      ],
+      [
+        53,
+        104,
+        491
+      ]
+    ]
+  },
+  "test": {
+    "accuracy": 0.7699745547073792,
+    "macro_f1": 0.7687778061580343,
+    "per_class": {
+      "keterlibatan": {
+        "precision": 0.8119533527696793,
+        "recall": 0.8264094955489614,
+        "f1-score": 0.8191176470588235,
+        "support": 674.0
+      },
+      "netral": {
+        "precision": 0.7354838709677419,
+        "recall": 0.7080745341614907,
+        "f1-score": 0.7215189873417721,
+        "support": 644.0
+      },
+      "kontradiksi": {
+        "precision": 0.7587253414264037,
+        "recall": 0.7727975270479135,
+        "f1-score": 0.7656967840735069,
+        "support": 647.0
+      },
+      "accuracy": 0.7699745547073792,
+      "macro avg": {
+        "precision": 0.7687208550546082,
+        "recall": 0.7690938522527885,
+        "f1-score": 0.7687778061580343,
+        "support": 1965.0
+      },
+      "weighted avg": {
+        "precision": 0.7693656328615129,
+        "recall": 0.7699745547073792,
+        "f1-score": 0.7695416494968486,
+        "support": 1965.0
+      }
+    },
+    "confusion_matrix": [
+      [
+        557,
+        68,
+        49
+      ],
+      [
+        78,
+        456,
+        110
+      ],
+      [
+        51,
+        96,
+        500
+      ]
+    ]
+  }
+}
