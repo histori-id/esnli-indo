@@ -128,12 +128,12 @@ def compute_metrics(eval_pred):
 # --------------------------------------------------------------------------- #
 def parse_args():
     p = argparse.ArgumentParser()
-    p.add_argument("--train_file", default="esnli_indo/train_data.jsonl")
-    p.add_argument("--dev_file", default="esnli_indo/validation_data.jsonl")
-    p.add_argument("--test_file", default="esnli_indo/test_data.jsonl")
-    p.add_argument("--label_col", default="label emas")
-    p.add_argument("--text_col", default="kalimat2",
-                   help="Kolom input model. Default: kalimat2 (hipotesis).")
+    p.add_argument("--train_file", default="dataset/gemini/train.jsonl")
+    p.add_argument("--dev_file", default="dataset/gemini/validation.jsonl")
+    p.add_argument("--test_file", default="dataset/gemini/test.jsonl")
+    p.add_argument("--label_col", default="gold_label")
+    p.add_argument("--text_col", default="Sentence2",
+                   help="Kolom input model. Default: Sentence2 (hipotesis).")
     p.add_argument("--eval_text_cols", nargs="*", default=None,
                    help="Kolom input untuk evaluasi dev/test. Default: sama dengan --text_col.")
     p.add_argument("--model_name", default="xlm-roberta-base")
@@ -141,11 +141,11 @@ def parse_args():
     p.add_argument("--max_length", type=int, default=128)
     p.add_argument("--batch_size", type=int, default=16)
     p.add_argument("--eval_batch_size", type=int, default=64)
-    p.add_argument("--lr", type=float, default=2e-5)
-    p.add_argument("--epochs", type=int, default=5)
+    p.add_argument("--lr", type=float, default=1e-5)
+    p.add_argument("--epochs", type=int, default=10)
     p.add_argument("--warmup_ratio", type=float, default=0.1)
     p.add_argument("--weight_decay", type=float, default=0.01)
-    p.add_argument("--patience", type=int, default=2, help="Early stopping per epoch; 0 = nonaktif")
+    p.add_argument("--patience", type=int, default=4, help="Early stopping per epoch; 0 = nonaktif")
     p.add_argument("--max_train_samples", type=int, default=None)
     p.add_argument("--seed", type=int, default=42)
     return p.parse_args()
