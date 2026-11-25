@@ -187,7 +187,7 @@ def parse_args():
     p.add_argument("--clf_batch_size", type=int, default=64)
     p.add_argument("--gen_batch_size", type=int, default=32)
     p.add_argument("--max_new_tokens", type=int, default=64)
-    p.add_argument("--num_beams", type=int, default=1)
+    p.add_argument("--num_beams", type=int, default=4)
     return p.parse_args()
 
 

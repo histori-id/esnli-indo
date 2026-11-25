@@ -233,7 +233,11 @@ def parse_device_map(v):
     if str(v).isdigit():
         return {"": int(v)}          # seluruh model di satu GPU tertentu
     return v                         # "auto", "balanced", "sequential"
+<<<<<<< HEAD
     
+=======
+
+>>>>>>> 9811f4a1e551ca55f8523a85f8cdb0966254e508
 def main():
     args = parse_args()
     set_seed(args.seed)
