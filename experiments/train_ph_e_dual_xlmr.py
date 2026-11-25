@@ -166,13 +166,13 @@ def compute_metrics(eval_pred):
 # --------------------------------------------------------------------------- #
 def parse_args():
     p = argparse.ArgumentParser()
-    p.add_argument("--train_file", default="esnli_indo/train_data.jsonl")
-    p.add_argument("--dev_file", default="esnli_indo/validation_data.jsonl")
-    p.add_argument("--test_file", default="esnli_indo/test_data.jsonl")
-    p.add_argument("--label_col", default="label emas")
-    p.add_argument("--premise_col", default="kalimat1")
-    p.add_argument("--hypothesis_col", default="kalimat2")
-    p.add_argument("--explanation_col", default="penjelasan",
+    p.add_argument("--train_file", default="dataset/gemini/train.jsonl")
+    p.add_argument("--dev_file", default="dataset/gemini/validation.jsonl")
+    p.add_argument("--test_file", default="dataset/gemini/test.jsonl")
+    p.add_argument("--label_col", default="gold_label")
+    p.add_argument("--premise_col", default="Sentence1")
+    p.add_argument("--hypothesis_col", default="Sentence2")
+    p.add_argument("--explanation_col", default="Explanation_1",
                    help="Kolom penjelasan untuk training.")
     p.add_argument("--eval_explanation_cols", nargs="*", default=None,
                    help="Kolom penjelasan untuk evaluasi dev/test, mis. penjelasan_1 penjelasan_2 "

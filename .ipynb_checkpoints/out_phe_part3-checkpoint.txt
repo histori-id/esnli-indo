@@ -1,0 +1,124 @@
+✅ dataset/train_data.jsonl: 5893 baris, kolom = ['annotator_labels', 'label emas', 'kalimat1', 'kalimat2', 'penjelasan']
+✅ dataset/validation_data.jsonl: 1965 baris, kolom = ['annotator_labels', 'label emas', 'kalimat1', 'kalimat2', 'penjelasan']
+✅ dataset/test_data.jsonl: 1965 baris, kolom = ['annotator_labels', 'label emas', 'kalimat1', 'kalimat2', 'penjelasan']
+[train] 0 baris dibuang (label '-'/tidak valid atau teks kosong), sisa 5893
+[validation] 0 baris dibuang (label '-'/tidak valid atau teks kosong), sisa 1965
+Distribusi label train:
+ label_str
+keterlibatan    2020
+kontradiksi     1942
+netral          1931
+Name: count, dtype: int64
+DatasetDict({
+    train: Dataset({
+        features: ['labels', 'input_ids', 'attention_mask'],
+        num_rows: 5893
+    })
+    validation: Dataset({
+        features: ['labels', 'input_ids', 'attention_mask'],
+        num_rows: 1965
+    })
+})
+Contoh input ter-tokenisasi: <s> Sekelompok orang di gang melihat ke kamera.</s></s> Orang-orang ada di komputer mereka</s></s> Orang-orang melihat kamera atau komputer mereka, yang merupakan barang yang berbeda.</s>
+Panjang token train: rata-rata 46.4, maks 192, terpotong 1 contoh
+Memulai pelatihan di device: cuda:0
+/home/iisafriyanti/RISET/env/lib/python3.12/site-packages/torch/nn/parallel/_functions.py:71: UserWarning: Was asked to gather along dimension 0, but all input tensors were scalars; will instead unsqueeze and return a vector.
+  warnings.warn(
+{'loss': 1.0981, 'grad_norm': 7.801397323608398, 'learning_rate': 5.351351351351351e-06, 'epoch': 0.54}
+{'eval_loss': 0.8660901784896851, 'eval_accuracy': 0.8315521628498728, 'eval_macro_f1': 0.8289637799444499, 'eval_runtime': 2.3657, 'eval_samples_per_second': 830.611, 'eval_steps_per_second': 6.763, 'epoch': 1.0}
+/home/iisafriyanti/RISET/env/lib/python3.12/site-packages/torch/nn/parallel/_functions.py:71: UserWarning: Was asked to gather along dimension 0, but all input tensors were scalars; will instead unsqueeze and return a vector.
+  warnings.warn(
+{'loss': 1.0236, 'grad_norm': 5.6209306716918945, 'learning_rate': 9.915915915915917e-06, 'epoch': 1.08}
+{'loss': 0.3641, 'grad_norm': 8.2848539352417, 'learning_rate': 9.315315315315316e-06, 'epoch': 1.62}
+{'eval_loss': 0.17557351291179657, 'eval_accuracy': 0.9516539440203562, 'eval_macro_f1': 0.9517240514256075, 'eval_runtime': 2.3658, 'eval_samples_per_second': 830.6, 'eval_steps_per_second': 6.763, 'epoch': 2.0}
+/home/iisafriyanti/RISET/env/lib/python3.12/site-packages/torch/nn/parallel/_functions.py:71: UserWarning: Was asked to gather along dimension 0, but all input tensors were scalars; will instead unsqueeze and return a vector.
+  warnings.warn(
+{'loss': 0.206, 'grad_norm': 1.3084288835525513, 'learning_rate': 8.714714714714717e-06, 'epoch': 2.16}
+{'loss': 0.1498, 'grad_norm': 14.315279006958008, 'learning_rate': 8.114114114114114e-06, 'epoch': 2.7}
+{'eval_loss': 0.16311952471733093, 'eval_accuracy': 0.9572519083969465, 'eval_macro_f1': 0.9571384691226364, 'eval_runtime': 2.3724, 'eval_samples_per_second': 828.261, 'eval_steps_per_second': 6.744, 'epoch': 3.0}
+/home/iisafriyanti/RISET/env/lib/python3.12/site-packages/torch/nn/parallel/_functions.py:71: UserWarning: Was asked to gather along dimension 0, but all input tensors were scalars; will instead unsqueeze and return a vector.
+  warnings.warn(
+{'loss': 0.1465, 'grad_norm': 5.091910362243652, 'learning_rate': 7.513513513513514e-06, 'epoch': 3.24}
+{'loss': 0.1176, 'grad_norm': 4.428593158721924, 'learning_rate': 6.912912912912913e-06, 'epoch': 3.78}
+{'eval_loss': 0.17751850187778473, 'eval_accuracy': 0.9582697201017811, 'eval_macro_f1': 0.9582525797507082, 'eval_runtime': 2.3809, 'eval_samples_per_second': 825.333, 'eval_steps_per_second': 6.72, 'epoch': 4.0}
+/home/iisafriyanti/RISET/env/lib/python3.12/site-packages/torch/nn/parallel/_functions.py:71: UserWarning: Was asked to gather along dimension 0, but all input tensors were scalars; will instead unsqueeze and return a vector.
+  warnings.warn(
+{'loss': 0.1155, 'grad_norm': 6.936650276184082, 'learning_rate': 6.312312312312313e-06, 'epoch': 4.32}
+{'loss': 0.0835, 'grad_norm': 22.98444938659668, 'learning_rate': 5.711711711711712e-06, 'epoch': 4.86}
+{'eval_loss': 0.1811777651309967, 'eval_accuracy': 0.9638676844783715, 'eval_macro_f1': 0.963841093282492, 'eval_runtime': 2.3797, 'eval_samples_per_second': 825.73, 'eval_steps_per_second': 6.723, 'epoch': 5.0}
+/home/iisafriyanti/RISET/env/lib/python3.12/site-packages/torch/nn/parallel/_functions.py:71: UserWarning: Was asked to gather along dimension 0, but all input tensors were scalars; will instead unsqueeze and return a vector.
+  warnings.warn(
+{'loss': 0.0645, 'grad_norm': 50.382484436035156, 'learning_rate': 5.1111111111111115e-06, 'epoch': 5.41}
+{'loss': 0.076, 'grad_norm': 0.457584023475647, 'learning_rate': 4.510510510510511e-06, 'epoch': 5.95}
+{'eval_loss': 0.19116681814193726, 'eval_accuracy': 0.9628498727735368, 'eval_macro_f1': 0.9628520095599876, 'eval_runtime': 2.3791, 'eval_samples_per_second': 825.951, 'eval_steps_per_second': 6.725, 'epoch': 6.0}
+/home/iisafriyanti/RISET/env/lib/python3.12/site-packages/torch/nn/parallel/_functions.py:71: UserWarning: Was asked to gather along dimension 0, but all input tensors were scalars; will instead unsqueeze and return a vector.
+  warnings.warn(
+{'loss': 0.0487, 'grad_norm': 0.9083558320999146, 'learning_rate': 3.909909909909911e-06, 'epoch': 6.49}
+{'eval_loss': 0.2006029337644577, 'eval_accuracy': 0.9618320610687023, 'eval_macro_f1': 0.9617415673942805, 'eval_runtime': 2.3781, 'eval_samples_per_second': 826.284, 'eval_steps_per_second': 6.728, 'epoch': 7.0}
+/home/iisafriyanti/RISET/env/lib/python3.12/site-packages/torch/nn/parallel/_functions.py:71: UserWarning: Was asked to gather along dimension 0, but all input tensors were scalars; will instead unsqueeze and return a vector.
+  warnings.warn(
+{'loss': 0.0698, 'grad_norm': 11.446288108825684, 'learning_rate': 3.3093093093093098e-06, 'epoch': 7.03}
+{'loss': 0.0421, 'grad_norm': 0.6169658899307251, 'learning_rate': 2.708708708708709e-06, 'epoch': 7.57}
+{'eval_loss': 0.20789825916290283, 'eval_accuracy': 0.9608142493638677, 'eval_macro_f1': 0.9608230032020463, 'eval_runtime': 2.3802, 'eval_samples_per_second': 825.57, 'eval_steps_per_second': 6.722, 'epoch': 8.0}
+/home/iisafriyanti/RISET/env/lib/python3.12/site-packages/torch/nn/parallel/_functions.py:71: UserWarning: Was asked to gather along dimension 0, but all input tensors were scalars; will instead unsqueeze and return a vector.
+  warnings.warn(
+{'loss': 0.056, 'grad_norm': 27.660219192504883, 'learning_rate': 2.1081081081081085e-06, 'epoch': 8.11}
+{'loss': 0.033, 'grad_norm': 1.796231985092163, 'learning_rate': 1.5075075075075076e-06, 'epoch': 8.65}
+{'eval_loss': 0.18439336121082306, 'eval_accuracy': 0.9653944020356234, 'eval_macro_f1': 0.9652753565829796, 'eval_runtime': 2.3783, 'eval_samples_per_second': 826.223, 'eval_steps_per_second': 6.728, 'epoch': 9.0}
+/home/iisafriyanti/RISET/env/lib/python3.12/site-packages/torch/nn/parallel/_functions.py:71: UserWarning: Was asked to gather along dimension 0, but all input tensors were scalars; will instead unsqueeze and return a vector.
+  warnings.warn(
+{'loss': 0.0412, 'grad_norm': 0.08052805066108704, 'learning_rate': 9.06906906906907e-07, 'epoch': 9.19}
+{'loss': 0.036, 'grad_norm': 0.07270745187997818, 'learning_rate': 3.063063063063063e-07, 'epoch': 9.73}
+{'eval_loss': 0.1913083791732788, 'eval_accuracy': 0.9653944020356234, 'eval_macro_f1': 0.9653205677558622, 'eval_runtime': 2.3768, 'eval_samples_per_second': 826.755, 'eval_steps_per_second': 6.732, 'epoch': 10.0}
+{'train_runtime': 411.4167, 'train_samples_per_second': 143.237, 'train_steps_per_second': 4.497, 'train_loss': 0.2049541473388672, 'epoch': 10.0}
+Bobot model terbaik disimpan di outputs/phe_to_label_xlmr/best_phe_to_label_xlmr_model.pt
+[validation/penjelasan] 0 baris dibuang (label '-'/tidak valid atau teks kosong), sisa 1965
+/home/iisafriyanti/RISET/env/lib/python3.12/site-packages/torch/nn/parallel/_functions.py:71: UserWarning: Was asked to gather along dimension 0, but all input tensors were scalars; will instead unsqueeze and return a vector.
+  warnings.warn(
+
+============================================================
+   Laporan Kinerja — VALIDATION (kalimat1 + kalimat2 + penjelasan)
+============================================================
+Akurasi         : 0.9654
+F1-Score (Macro): 0.9653
+------------------------------------------------------------
+              precision    recall  f1-score   support
+
+keterlibatan     0.9762    0.9733    0.9747       674
+      netral     0.9748    0.9611    0.9679       643
+ kontradiksi     0.9454    0.9614    0.9533       648
+
+    accuracy                         0.9654      1965
+   macro avg     0.9654    0.9653    0.9653      1965
+weighted avg     0.9656    0.9654    0.9654      1965
+
+Confusion matrix (baris=gold, kolom=prediksi): ['keterlibatan', 'netral', 'kontradiksi']
+[[656   3  15]
+ [  4 618  21]
+ [ 12  13 623]]
+[test/penjelasan] 0 baris dibuang (label '-'/tidak valid atau teks kosong), sisa 1965
+/home/iisafriyanti/RISET/env/lib/python3.12/site-packages/torch/nn/parallel/_functions.py:71: UserWarning: Was asked to gather along dimension 0, but all input tensors were scalars; will instead unsqueeze and return a vector.
+  warnings.warn(
+
+============================================================
+   Laporan Kinerja — TEST (kalimat1 + kalimat2 + penjelasan)
+============================================================
+Akurasi         : 0.9634
+F1-Score (Macro): 0.9630
+------------------------------------------------------------
+              precision    recall  f1-score   support
+
+keterlibatan     0.9751    0.9866    0.9808       674
+      netral     0.9606    0.9457    0.9531       644
+ kontradiksi     0.9538    0.9567    0.9552       647
+
+    accuracy                         0.9634      1965
+   macro avg     0.9631    0.9630    0.9630      1965
+weighted avg     0.9633    0.9634    0.9633      1965
+
+Confusion matrix (baris=gold, kolom=prediksi): ['keterlibatan', 'netral', 'kontradiksi']
+[[665   2   7]
+ [ 12 609  23]
+ [  5  23 619]]
+
+Selesai. Hasil di outputs/phe_to_label_xlmr/results.json

@@ -171,11 +171,11 @@ def subset_text_metrics(preds, refs, mask, name):
 # --------------------------------------------------------------------------- #
 def parse_args():
     p = argparse.ArgumentParser()
-    p.add_argument("--test_file", default="esnli_indo/test_data.jsonl")
-    p.add_argument("--premise_col", default="kalimat1")
-    p.add_argument("--hypothesis_col", default="kalimat2")
-    p.add_argument("--label_col", default="label emas")
-    p.add_argument("--explanation_cols", nargs="+", default=["penjelasan"],
+    p.add_argument("--test_file", default="dataset/gemini/test.jsonl")
+    p.add_argument("--premise_col", default="Sentence1")
+    p.add_argument("--hypothesis_col", default="Sentence2")
+    p.add_argument("--label_col", default="gold_label")
+    p.add_argument("--explanation_cols", nargs="+", default=["Explanation_1"],
                    help="Kolom penjelasan referensi, mis. penjelasan_1 penjelasan_2 penjelasan_3")
     p.add_argument("--clf_dir", default="outputs/ph_to_label_xlmr")
     p.add_argument("--clf_ckpt", default="best_ph_to_label_xlmr_model.pt")

@@ -182,12 +182,12 @@ def text_metrics(preds, refs_list):
 # --------------------------------------------------------------------------- #
 def parse_args():
     p = argparse.ArgumentParser()
-    p.add_argument("--train_file", default="esnli_indo/train_data.jsonl")
-    p.add_argument("--dev_file", default="esnli_indo/validation_data.jsonl")
-    p.add_argument("--test_file", default="esnli_indo/test_data.jsonl")
-    p.add_argument("--premise_col", default="kalimat1")
-    p.add_argument("--hypothesis_col", default="kalimat2")
-    p.add_argument("--explanation_col", default="penjelasan",
+    p.add_argument("--train_file", default="dataset/gemini/train.jsonl")
+    p.add_argument("--dev_file", default="dataset/gemini/validation.jsonl")
+    p.add_argument("--test_file", default="dataset/gemini/test.jsonl")
+    p.add_argument("--premise_col", default="Sentence1")
+    p.add_argument("--hypothesis_col", default="Sentence2")
+    p.add_argument("--explanation_col", default="Explanation_1",
                    help="Kolom penjelasan (target) untuk training.")
     p.add_argument("--eval_explanation_cols", nargs="*", default=None,
                    help="Kolom penjelasan referensi untuk evaluasi, mis. penjelasan_1 "
@@ -222,9 +222,18 @@ def parse_args():
     p.add_argument("--max_new_tokens", type=int, default=64)
     p.add_argument("--num_beams", type=int, default=1)
     p.add_argument("--seed", type=int, default=42)
+    p.add_argument("--device_map", default=None,
+               help="None (default, Trainer yang mengatur), 'auto' (bagi model ke semua GPU), "
+                    "atau nomor GPU, mis. 0 / 1.")
     return p.parse_args()
 
-
+def parse_device_map(v):
+    if v is None or str(v).lower() in ("", "none"):
+        return None
+    if str(v).isdigit():
+        return {"": int(v)}          # seluruh model di satu GPU tertentu
+    return v                         # "auto", "balanced", "sequential"
+    
 def main():
     args = parse_args()
     set_seed(args.seed)
@@ -256,6 +265,7 @@ def main():
     model = AutoModelForCausalLM.from_pretrained(
         args.model_name,
         attn_implementation="eager",   # disarankan untuk training Gemma 3
+        device_map=parse_device_map(args.device_map),
         **{dtype_key: dtype},
     )
     model.config.use_cache = False

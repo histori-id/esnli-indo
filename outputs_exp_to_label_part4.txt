@@ -1,0 +1,4 @@
+Traceback (most recent call last):
+  File "/root/esnli-indo/experiments/train_expl_to_label_xlmr.py", line 26, in <module>
+    import numpy as np
+ModuleNotFoundError: No module named 'numpy'
