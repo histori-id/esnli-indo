@@ -222,8 +222,17 @@ def parse_args():
     p.add_argument("--max_new_tokens", type=int, default=64)
     p.add_argument("--num_beams", type=int, default=1)
     p.add_argument("--seed", type=int, default=42)
+    p.add_argument("--device_map", default=None,
+               help="None (default, Trainer yang mengatur), 'auto' (bagi model ke semua GPU), "
+                    "atau nomor GPU, mis. 0 / 1.")
     return p.parse_args()
 
+def parse_device_map(v):
+    if v is None or str(v).lower() in ("", "none"):
+        return None
+    if str(v).isdigit():
+        return {"": int(v)}          # seluruh model di satu GPU tertentu
+    return v                         # "auto", "balanced", "sequential"
 
 def main():
     args = parse_args()
@@ -256,6 +265,7 @@ def main():
     model = AutoModelForCausalLM.from_pretrained(
         args.model_name,
         attn_implementation="eager",   # disarankan untuk training Gemma 3
+        device_map=parse_device_map(args.device_map),
         **{dtype_key: dtype},
     )
     model.config.use_cache = False
