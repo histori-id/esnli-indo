@@ -1,0 +1,22 @@
+Traceback (most recent call last):
+  File "/root/esnli-indo/experiments/train_phe_to_label_xlmr.py", line 335, in <module>
+    main()
+  File "/root/esnli-indo/experiments/train_phe_to_label_xlmr.py", line 199, in main
+    "train": load_jsonl(args.train_file),
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/esnli-indo/experiments/train_phe_to_label_xlmr.py", line 94, in load_jsonl
+    df = pd.read_json(path, lines=True)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/pandas/io/json/_json.py", line 993, in read_json
+    json_reader = JsonReader(
+                  ^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/pandas/io/json/_json.py", line 1189, in __init__
+    data = self._get_data_from_filepath(filepath_or_buffer)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/pandas/io/json/_json.py", line 1205, in _get_data_from_filepath
+    self.handles = get_handle(
+                   ^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/pandas/io/common.py", line 945, in get_handle
+    handle = open(
+             ^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'esnli_indo/train_data.jsonl'
