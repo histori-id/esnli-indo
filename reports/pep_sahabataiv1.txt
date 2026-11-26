@@ -1,0 +1,42 @@
+Device: cuda | input tahap 3: expl (outputs/expl_to_label_xlmr)
+[test] 0 baris dibuang (label '-' atau teks kosong), sisa 1964
+Loading weights:   0%|          | 0/199 [00:00<?, ?it/s]Loading weights: 100%|██████████| 199/199 [00:00<00:00, 5864.35it/s]
+[transformers] [1mXLMRobertaModel LOAD REPORT[0m from: xlm-roberta-base
+Key                       | Status     |  | 
+--------------------------+------------+--+-
+lm_head.bias              | UNEXPECTED |  | 
+lm_head.layer_norm.weight | UNEXPECTED |  | 
+lm_head.layer_norm.bias   | UNEXPECTED |  | 
+lm_head.dense.weight      | UNEXPECTED |  | 
+lm_head.dense.bias        | UNEXPECTED |  | 
+
+Notes:
+- UNEXPECTED:	can be ignored when loading from different task/architecture; not ok if you expect identical arch.
+✅ Classifier dimuat dari outputs/ph_to_label_xlmr (base: xlm-roberta-base, max_length: 128)
+
+============================================================
+   TAHAP 1 — Label awal (P+H) vs label emas
+============================================================
+Akurasi         : 0.7678
+F1-Score (Macro): 0.7663
+              precision    recall  f1-score   support
+
+keterlibatan     0.8395    0.8346    0.8370       683
+      netral     0.7047    0.7058    0.7052       639
+ kontradiksi     0.7550    0.7586    0.7568       642
+
+    accuracy                         0.7678      1964
+   macro avg     0.7664    0.7663    0.7663      1964
+weighted avg     0.7680    0.7678    0.7679      1964
+
+Confusion matrix (baris=acuan, kolom=prediksi): ['keterlibatan', 'netral', 'kontradiksi']
+[[570  80  33]
+ [ 63 451 125]
+ [ 46 109 487]]
+Loading weights:   0%|          | 0/291 [00:00<?, ?it/s]Loading weights: 100%|██████████| 291/291 [00:00<00:00, 3192.16it/s]
+✅ Generator dimuat: base GoToCompany/llama3-8b-cpt-sahabatai-v1-instruct + adapter LoRA outputs/phl_to_expl_gemma/best_model
+
+Generasi penjelasan dengan label awal (1964 contoh)...
+[transformers] Ignoring clean_up_tokenization_spaces=True for BPE tokenizer TokenizersBackend. The clean_up_tokenization post-processing step is designed for WordPiece tokenizers and is destructive for BPE (it strips spaces before punctuation). Set clean_up_tokenization_spaces=False to suppress this warning, or set clean_up_tokenization_spaces_for_bpe_even_though_it_will_corrupt_output=True to force cleanup anyway.
+  generasi 8/1964
+  generasi 16/1964

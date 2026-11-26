@@ -1,0 +1,338 @@
+Device: cuda | input tahap 3: phe (outputs/phe_to_label_xlmr)
+[test] 0 baris dibuang (label '-' atau teks kosong), sisa 1964
+[transformers] [1mXLMRobertaModel LOAD REPORT[0m from: xlm-roberta-base
+Key                       | Status     |  | 
+--------------------------+------------+--+-
+lm_head.layer_norm.weight | UNEXPECTED |  | 
+lm_head.dense.weight      | UNEXPECTED |  | 
+lm_head.dense.bias        | UNEXPECTED |  | 
+lm_head.layer_norm.bias   | UNEXPECTED |  | 
+lm_head.bias              | UNEXPECTED |  | 
+
+Notes:
+- UNEXPECTED:	can be ignored when loading from different task/architecture; not ok if you expect identical arch.
+✅ Classifier dimuat dari outputs/ph_to_label_xlmr (base: xlm-roberta-base, max_length: 128)
+
+============================================================
+   TAHAP 1 — Label awal (P+H) vs label emas
+============================================================
+Akurasi         : 0.7678
+F1-Score (Macro): 0.7663
+              precision    recall  f1-score   support
+
+keterlibatan     0.8395    0.8346    0.8370       683
+      netral     0.7047    0.7058    0.7052       639
+ kontradiksi     0.7550    0.7586    0.7568       642
+
+    accuracy                         0.7678      1964
+   macro avg     0.7664    0.7663    0.7663      1964
+weighted avg     0.7680    0.7678    0.7679      1964
+
+Confusion matrix (baris=acuan, kolom=prediksi): ['keterlibatan', 'netral', 'kontradiksi']
+[[570  80  33]
+ [ 63 451 125]
+ [ 46 109 487]]
+✅ Generator dimuat: base GoToCompany/llama3-8b-cpt-sahabatai-v1-instruct + adapter LoRA outputs/phl_to_expl_gemma/best_model
+
+Generasi penjelasan dengan label awal (1964 contoh)...
+[transformers] Ignoring clean_up_tokenization_spaces=True for BPE tokenizer TokenizersBackend. The clean_up_tokenization post-processing step is designed for WordPiece tokenizers and is destructive for BPE (it strips spaces before punctuation). Set clean_up_tokenization_spaces=False to suppress this warning, or set clean_up_tokenization_spaces_for_bpe_even_though_it_will_corrupt_output=True to force cleanup anyway.
+  generasi 8/1964
+  generasi 16/1964
+  generasi 24/1964
+  generasi 32/1964
+  generasi 40/1964
+  generasi 48/1964
+  generasi 56/1964
+  generasi 64/1964
+  generasi 72/1964
+  generasi 80/1964
+  generasi 88/1964
+  generasi 96/1964
+  generasi 104/1964
+  generasi 112/1964
+  generasi 120/1964
+  generasi 128/1964
+  generasi 136/1964
+  generasi 144/1964
+  generasi 152/1964
+  generasi 160/1964
+  generasi 168/1964
+  generasi 176/1964
+  generasi 184/1964
+  generasi 192/1964
+  generasi 200/1964
+  generasi 208/1964
+  generasi 216/1964
+  generasi 224/1964
+  generasi 232/1964
+  generasi 240/1964
+  generasi 248/1964
+  generasi 256/1964
+  generasi 264/1964
+  generasi 272/1964
+  generasi 280/1964
+  generasi 288/1964
+  generasi 296/1964
+  generasi 304/1964
+  generasi 312/1964
+  generasi 320/1964
+  generasi 328/1964
+  generasi 336/1964
+  generasi 344/1964
+  generasi 352/1964
+  generasi 360/1964
+  generasi 368/1964
+  generasi 376/1964
+  generasi 384/1964
+  generasi 392/1964
+  generasi 400/1964
+  generasi 408/1964
+  generasi 416/1964
+  generasi 424/1964
+  generasi 432/1964
+  generasi 440/1964
+  generasi 448/1964
+  generasi 456/1964
+  generasi 464/1964
+  generasi 472/1964
+  generasi 480/1964
+  generasi 488/1964
+  generasi 496/1964
+  generasi 504/1964
+  generasi 512/1964
+  generasi 520/1964
+  generasi 528/1964
+  generasi 536/1964
+  generasi 544/1964
+  generasi 552/1964
+  generasi 560/1964
+  generasi 568/1964
+  generasi 576/1964
+  generasi 584/1964
+  generasi 592/1964
+  generasi 600/1964
+  generasi 608/1964
+  generasi 616/1964
+  generasi 624/1964
+  generasi 632/1964
+  generasi 640/1964
+  generasi 648/1964
+  generasi 656/1964
+  generasi 664/1964
+  generasi 672/1964
+  generasi 680/1964
+  generasi 688/1964
+  generasi 696/1964
+  generasi 704/1964
+  generasi 712/1964
+  generasi 720/1964
+  generasi 728/1964
+  generasi 736/1964
+  generasi 744/1964
+  generasi 752/1964
+  generasi 760/1964
+  generasi 768/1964
+  generasi 776/1964
+  generasi 784/1964
+  generasi 792/1964
+  generasi 800/1964
+  generasi 808/1964
+  generasi 816/1964
+  generasi 824/1964
+  generasi 832/1964
+  generasi 840/1964
+  generasi 848/1964
+  generasi 856/1964
+  generasi 864/1964
+  generasi 872/1964
+  generasi 880/1964
+  generasi 888/1964
+  generasi 896/1964
+  generasi 904/1964
+  generasi 912/1964
+  generasi 920/1964
+  generasi 928/1964
+  generasi 936/1964
+  generasi 944/1964
+  generasi 952/1964
+  generasi 960/1964
+  generasi 968/1964
+  generasi 976/1964
+  generasi 984/1964
+  generasi 992/1964
+  generasi 1000/1964
+  generasi 1008/1964
+  generasi 1016/1964
+  generasi 1024/1964
+  generasi 1032/1964
+  generasi 1040/1964
+  generasi 1048/1964
+  generasi 1056/1964
+  generasi 1064/1964
+  generasi 1072/1964
+  generasi 1080/1964
+  generasi 1088/1964
+  generasi 1096/1964
+  generasi 1104/1964
+  generasi 1112/1964
+  generasi 1120/1964
+  generasi 1128/1964
+  generasi 1136/1964
+  generasi 1144/1964
+  generasi 1152/1964
+  generasi 1160/1964
+  generasi 1168/1964
+  generasi 1176/1964
+  generasi 1184/1964
+  generasi 1192/1964
+  generasi 1200/1964
+  generasi 1208/1964
+  generasi 1216/1964
+  generasi 1224/1964
+  generasi 1232/1964
+  generasi 1240/1964
+  generasi 1248/1964
+  generasi 1256/1964
+  generasi 1264/1964
+  generasi 1272/1964
+  generasi 1280/1964
+  generasi 1288/1964
+  generasi 1296/1964
+  generasi 1304/1964
+  generasi 1312/1964
+  generasi 1320/1964
+  generasi 1328/1964
+  generasi 1336/1964
+  generasi 1344/1964
+  generasi 1352/1964
+  generasi 1360/1964
+  generasi 1368/1964
+  generasi 1376/1964
+  generasi 1384/1964
+  generasi 1392/1964
+  generasi 1400/1964
+  generasi 1408/1964
+  generasi 1416/1964
+  generasi 1424/1964
+  generasi 1432/1964
+  generasi 1440/1964
+  generasi 1448/1964
+  generasi 1456/1964
+  generasi 1464/1964
+  generasi 1472/1964
+  generasi 1480/1964
+  generasi 1488/1964
+  generasi 1496/1964
+  generasi 1504/1964
+  generasi 1512/1964
+  generasi 1520/1964
+  generasi 1528/1964
+  generasi 1536/1964
+  generasi 1544/1964
+  generasi 1552/1964
+  generasi 1560/1964
+  generasi 1568/1964
+  generasi 1576/1964
+  generasi 1584/1964
+  generasi 1592/1964
+  generasi 1600/1964
+  generasi 1608/1964
+  generasi 1616/1964
+  generasi 1624/1964
+  generasi 1632/1964
+  generasi 1640/1964
+  generasi 1648/1964
+  generasi 1656/1964
+  generasi 1664/1964
+  generasi 1672/1964
+  generasi 1680/1964
+  generasi 1688/1964
+  generasi 1696/1964
+  generasi 1704/1964
+  generasi 1712/1964
+  generasi 1720/1964
+  generasi 1728/1964
+  generasi 1736/1964
+  generasi 1744/1964
+  generasi 1752/1964
+  generasi 1760/1964
+  generasi 1768/1964
+  generasi 1776/1964
+  generasi 1784/1964
+  generasi 1792/1964
+  generasi 1800/1964
+  generasi 1808/1964
+  generasi 1816/1964
+  generasi 1824/1964
+  generasi 1832/1964
+  generasi 1840/1964
+  generasi 1848/1964
+  generasi 1856/1964
+  generasi 1864/1964
+  generasi 1872/1964
+  generasi 1880/1964
+  generasi 1888/1964
+  generasi 1896/1964
+  generasi 1904/1964
+  generasi 1912/1964
+  generasi 1920/1964
+  generasi 1928/1964
+  generasi 1936/1964
+  generasi 1944/1964
+  generasi 1952/1964
+  generasi 1960/1964
+  generasi 1964/1964
+
+============================================================
+   TAHAP 2 — Kualitas penjelasan
+============================================================
+  semua                  n=1964   BLEU=18.90  ROUGE-L=42.61
+[transformers] [1mXLMRobertaModel LOAD REPORT[0m from: xlm-roberta-base
+Key                       | Status     |  | 
+--------------------------+------------+--+-
+lm_head.layer_norm.weight | UNEXPECTED |  | 
+lm_head.dense.weight      | UNEXPECTED |  | 
+lm_head.dense.bias        | UNEXPECTED |  | 
+lm_head.layer_norm.bias   | UNEXPECTED |  | 
+lm_head.bias              | UNEXPECTED |  | 
+
+Notes:
+- UNEXPECTED:	can be ignored when loading from different task/architecture; not ok if you expect identical arch.
+✅ Classifier dimuat dari outputs/phe_to_label_xlmr (base: xlm-roberta-base, max_length: 192)
+
+============================================================
+   TAHAP 3 — LABEL AKHIR (phe) vs label emas
+============================================================
+Akurasi         : 0.7755
+F1-Score (Macro): 0.7741
+              precision    recall  f1-score   support
+
+keterlibatan     0.8470    0.8346    0.8407       683
+      netral     0.7138    0.7105    0.7122       639
+ kontradiksi     0.7618    0.7773    0.7695       642
+
+    accuracy                         0.7755      1964
+   macro avg     0.7742    0.7741    0.7741      1964
+weighted avg     0.7758    0.7755    0.7756      1964
+
+Confusion matrix (baris=acuan, kolom=prediksi): ['keterlibatan', 'netral', 'kontradiksi']
+[[570  80  33]
+ [ 62 454 123]
+ [ 41 102 499]]
+
+============================================================
+   RINGKASAN
+============================================================
+Akurasi tahap 1 (awal)  : 0.7678
+Akurasi tahap 3 (akhir) : 0.7755
+Label berubah           : 26 dari 1964 (1.32%)
+  benar -> salah        : 5
+  salah -> benar        : 20
+  salah -> salah lain   : 1
+Prediksi selektif (hanya jika tahap 1 == tahap 3):
+  coverage              : 98.68%
+  akurasi (sepakat)     : 0.7755
+  akurasi tidak sepakat : tahap1=0.1923 | tahap3=0.7692
+
+Selesai. CSV: outputs/predict_explain_predict_phe/predict_explain_predict_test.csv
+Metrik: outputs/predict_explain_predict_phe/results.json
